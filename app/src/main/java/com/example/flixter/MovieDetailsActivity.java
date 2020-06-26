@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -46,6 +47,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
+        tvOverview.setMovementMethod(new ScrollingMovementMethod());
 
         String placeholder = "flicks_backdrop_placeholder.gif";
         Glide.with(getApplicationContext()).load(movie.getBackdropPath()).placeholder(Drawable.createFromPath(placeholder)).into(ivBackdrop);
@@ -74,7 +76,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             ivBackdrop.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    Log.d("MovieDetailsActivity", "reached onclick");
                                     Intent intent = new Intent(getApplicationContext(), MovieTrailerActivity.class);
                                     intent.putExtra("videoId", videoId);
                                     startActivity(intent);

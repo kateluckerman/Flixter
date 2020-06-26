@@ -3,17 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:background="@drawable/border"
+    >
 
     <ImageView
         android:id="@+id/ivPoster"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="195dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="false"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -24,20 +28,30 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:background="#FFFFFF"
+        android:backgroundTint="@color/titleBackground"
+        android:fontFamily="@font/averia_serif_libre"
+        android:gravity="center_horizontal"
         android:textSize="24sp"
         tools:text="Sample Title" />
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="265dp"
-        android:layout_height="116dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/tvTitle"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="5dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:fontFamily="@font/averia_serif_libre_light"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
         tools:text="Sample Overview" />
 
 </RelativeLayout>

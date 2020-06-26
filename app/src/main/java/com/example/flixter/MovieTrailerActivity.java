@@ -19,7 +19,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
 
         final String videoId = getIntent().getStringExtra("videoId");
 
-        YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
+        YouTubePlayerView playerView = findViewById(R.id.player);
 
         playerView.initialize(getString(R.string.YT_api_key), new YouTubePlayer.OnInitializedListener() {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
