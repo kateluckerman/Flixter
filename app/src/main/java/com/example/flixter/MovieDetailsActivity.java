@@ -57,6 +57,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         final String VIDEOS_URL = "https://api.themoviedb.org/3/movie/"+ movie.getId()+ "/videos?api_key=" + getString(R.string.api_key);
 
         AsyncHttpClient client = new AsyncHttpClient();
+
         client.get(VIDEOS_URL, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
