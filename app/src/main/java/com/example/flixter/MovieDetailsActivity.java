@@ -2,9 +2,11 @@ package com.example.flixter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -52,7 +54,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         rbVoteAverage.setRating(voteAverage > 0 ? voteAverage / 2.0f : voteAverage);
 
         // calls to videos endpoint to find video id
-        final String VIDEOS_URL = "https://api.themoviedb.org/3/movie/"+ movie.getId()+ "/videos?api_key=" + getString(R.string.YT_api_key);
+        final String VIDEOS_URL = "https://api.themoviedb.org/3/movie/"+ movie.getId()+ "/videos?api_key=" + getString(R.string.api_key);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(VIDEOS_URL, new JsonHttpResponseHandler() {
@@ -64,13 +66,20 @@ public class MovieDetailsActivity extends AppCompatActivity {
                     // get the first result
                     if (results.length() > 0) {
                         JSONObject result = results.getJSONObject(0);
-                        videoId = result.getString("key");
-                    }
-
-                    if (videoId != null) {
-                        // add a click listener to the backdrop image (first add the backdrop image)
-
-                        // use an intent and pass the video id as an extra string
+                        if (result.has("key")) {
+                            videoId = result.getString("key");
+                            // wait until call returns to continue
+                            while (videoId == null) {}
+                            ivBackdrop.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Log.d("MovieDetailsActivity", "reached onclick");
+                                    Intent intent = new Intent(getApplicationContext(), MovieTrailerActivity.class);
+                                    intent.putExtra("videoId", videoId);
+                                    startActivity(intent);
+                                }
+                            });
+                        }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
