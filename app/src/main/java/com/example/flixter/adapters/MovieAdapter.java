@@ -81,15 +81,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             String placeholder;
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 imageUrl = movie.getBackdropPath();
-                placeholder = "flicks_backdrop_placeholder.gif";
+                placeholder = context.getString(R.string.bd_placeholder_path);
             } else {
                 imageUrl = movie.getPosterPath();
-                placeholder = "flicks_movie_placeholder.gif";
+                placeholder = context.getString(R.string.placeholder_path);
             }
 
             Glide.with(context).load(imageUrl).transform(new RoundedCornersTransformation(10, 0)).placeholder(Drawable.createFromPath(placeholder)).into(ivPoster);
-
-            // Glide.with(context).load(imageUrl).transform(new RoundedCornersTransformation(20, 10)).placeholder(Drawable.createFromPath(placeholder)).into(ivPoster);
         }
 
         @Override

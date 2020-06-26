@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Flixter</string>
+    <string name="bd_placeholder_path">flicks_backdrop_placeholder.gif</string>
+    <string name="placeholder_path">flicks_movie_placeholder.gif</string>
 </resources>
