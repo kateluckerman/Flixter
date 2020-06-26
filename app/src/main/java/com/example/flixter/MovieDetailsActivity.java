@@ -33,6 +33,5 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage = voteAverage > 0 ? voteAverage / 2.0f : voteAverage);
-
     }
 }
