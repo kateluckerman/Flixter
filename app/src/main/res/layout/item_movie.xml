@@ -50,7 +50,7 @@
         android:layout_marginBottom="5dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:fontFamily="@font/averia_serif_libre_light"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:textAlignment="center"
         tools:text="Sample Overview" />
 

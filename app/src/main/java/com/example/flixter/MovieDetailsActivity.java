@@ -71,8 +71,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
                         JSONObject result = results.getJSONObject(0);
                         if (result.has("key")) {
                             videoId = result.getString("key");
-                            // wait until call returns to continue
-                            while (videoId == null) {}
                             ivBackdrop.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
