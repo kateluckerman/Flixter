@@ -30,7 +30,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+Portrait:
 <img src='https://github.com/kateluckerman/Flixter/blob/master/walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Landscape:
+<img src='https://github.com/kateluckerman/Flixter/blob/master/land-walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Open-source libraries used
 
